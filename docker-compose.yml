@@ -13,7 +13,7 @@ services:
   prometheus:
     image: prom/prometheus:v2.36.2
     volumes:
-      - ./prometheus/:/etc/prometheus/
+      - /var/services/homes/benjaminmatase/prometheus-monitoring/prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -98,9 +98,9 @@ services:
       - 3000:3000
     volumes:
       - grafana_data:/var/lib/grafana
-      - ./grafana/provisioning/:/etc/grafana/provisioning/
+      - /var/services/homes/benjaminmatase/prometheus-monitoring/grafana/provisioning/:/etc/grafana/provisioning/
     env_file:
-      - ./grafana/config.monitoring
+      - /var/services/homes/benjaminmatase/prometheus-monitoring/grafana/config.monitoring
     networks:
       - back-tier
       - front-tier
