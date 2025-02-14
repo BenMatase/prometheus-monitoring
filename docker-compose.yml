@@ -13,7 +13,7 @@ services:
   prometheus:
     image: prom/prometheus:v2.36.2
     volumes:
-      - /var/services/homes/benjaminmatase/prometheus-monitoring/prometheus/:/etc/prometheus/
+      - /volume1/SharedData/prometheus-monitoring/prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
