@@ -100,7 +100,7 @@ services:
       - grafana_data:/var/lib/grafana
       - /volume1/SharedData/prometheus-monitoring/grafana/provisioning/:/etc/grafana/provisioning/
     env_file:
-      - /volume1/SharedData/prometheus-monitoring/grafana/config.monitoring
+      - ./grafana/config.monitoring
     networks:
       - back-tier
       - front-tier
